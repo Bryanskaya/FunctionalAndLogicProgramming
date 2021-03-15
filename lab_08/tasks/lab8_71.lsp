@@ -1,0 +1,12 @@
+(defun mult (lst n)
+	(mapcar #'(lambda (x) (* x n))
+			lst)
+)
+
+(defun mult-all (lst n)
+	(mapcar #'(lambda (x) 
+				(cond ((numberp x)(* x n))
+					  ((listp x)(mult-all x n))
+					  (t x)))
+			  lst)
+)

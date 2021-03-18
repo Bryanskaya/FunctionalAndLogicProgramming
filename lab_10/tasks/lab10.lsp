@@ -23,12 +23,19 @@
 
 ;Написать рекурсивную функцию alloddr, которая возвращает t, 
 ;когда все элементы списка нечетные.
+;(defun alloddr (lst)
+;	(cond ((null lst) t)
+;		  ((listp (car lst))(and (alloddr (car lst)) (alloddr (cdr lst))))
+;		  ((not (numberp (car lst))) nil)
+;		  ((evenp (car lst)) nil)
+;		  (t (alloddr (cdr lst))))
+;)
+
 (defun alloddr (lst)
-	(cond ((null lst) t)
-		  ((listp (car lst))(and (alloddr (car lst)) (alloddr (cdr lst))))
-		  ((not (numberp (car lst))) nil)
-		  ((evenp (car lst)) nil)
-		  (t (alloddr (cdr lst))))
+	(cond 	((null lst) t)
+			((listp (car lst))(and (alloddr (car lst)) (alloddr (cdr lst))))
+			((oddp (car lst)) (alloddr (cdr lst)))
+	)
 )
 
 ;Написать рекурсивную функцию, относящуюся к хвостовой рекурсии с одним тестом 

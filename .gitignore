@@ -153,6 +153,12 @@ dmypy.json
 *.class
 *.bbl
 *.blg
+*.BAK
+*.bk1
+*.inc
+*.pre
+*.prj
+*.pro
 TAGS
 config.h
 config.log
@@ -165,6 +171,8 @@ Makefile
 include
 lib
 bin
+Exe/
+Obj/
 linux/
 debug/
 auto/

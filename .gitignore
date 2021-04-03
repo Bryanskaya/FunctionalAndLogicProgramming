@@ -158,7 +158,6 @@ dmypy.json
 *.inc
 *.pre
 *.prj
-*.pro
 TAGS
 config.h
 config.log

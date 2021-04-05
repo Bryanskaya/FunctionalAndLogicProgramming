@@ -36,11 +36,12 @@ CLAUSES
 GOAL
 	%student("Boby", "Adamson", "unv_3").
 	 
-	student(Name, Surname, "unv_1").
+	%student(Name, Surname, "unv_1").
 	
 	%student("Galya", Surname, "unv_2").
 	
 	%teacher(_, _, _, "unv_2").
 	
 	%teacher(Name, Surname, Subj, "unv_2").
-	 
+
+	teacher(Name, Surname, Subj, "unv_100").	 

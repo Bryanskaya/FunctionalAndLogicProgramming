@@ -46,15 +46,9 @@ CLAUSES
 	sex("Vadim", male).
 	sex("Ivan", male).
 	
-	
-	
-	
 	find_grandparent(Child, Grandparent, Sex_gr, Sex_p) :-
-		parent(Parent, Child),
-		sex(Parent, Sex_p),
-		parent(Grandparent, Parent),
-		sex(Grandparent, Sex_gr).
-	
+		parent(Parent, Child), sex(Parent, Sex_p),
+		parent(Grandparent, Parent), sex(Grandparent, Sex_gr).
 	
 	/*family("Vasya", "Ann", "Slava").
 	family("Vasya", "Ann", "Vadim").

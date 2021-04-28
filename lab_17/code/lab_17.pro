@@ -29,10 +29,10 @@ CLAUSES
 	max21(A, B, C, C) :- C >= A, C >= B.
 	
 	max22(A, B, C, A) :- A > B, A > C, !.
-	max22(A, B, C, B) :- B > C, !.
+	max22(_, B, C, B) :- B > C, !.
 	max22(_, _, C, C).
 	
 	
 GOAL
 	%max11(-2, 2, Max).
-	%max21(3, 3, 1, Max).
+	max21(3, 3, 1, Max).

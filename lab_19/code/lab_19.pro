@@ -28,8 +28,8 @@ clauses
 		Temp = Len_temp + 1,		% Len_temp - temporary length
 		len(T, Temp, Len), 		% Len - length
 		!.				% Temp - temporary var
-	len([], Len, Len) :- !.			% Lst - currect list
-	len(Lst, Len) :- len(Lst, 0, Len), !. 	
+	len([], Len, Len).			% Lst - currect list
+	len(Lst, Len) :- len(Lst, 0, Len). 	
 		
 	% sum of elements
 	sum([X|T], Sum_temp, Sum) :- 		% X - 1st element
@@ -47,6 +47,6 @@ clauses
 	sum_odd_pos(Lst, Sum) :- sum_odd_pos(Lst, 0, Sum), !.	
 	
 goal
-	%len([5], Len).
+	len([1, 2, 4], Len).
 	%sum([-5, 0, 5, -9], Sum).
 	%sum_odd_pos([-5, 1, 3], Sum).

@@ -21,6 +21,8 @@ PREDICATES
 	sex(name, symbol).
 	
 	find_grandparent(name, name, symbol, symbol).
+	
+	find_relative(integer, name, symbol, symbol).
 
 
 CLAUSES
@@ -49,6 +51,13 @@ CLAUSES
 	find_grandparent(Child, Grandparent, Sex_gr, Sex_p) :-
 		parent(Parent, Child), sex(Parent, Sex_p),
 		parent(Grandparent, Parent), sex(Grandparent, Sex_gr).
+		
+	find_relative(0, Relative, _, Relative) :- !.
+	find_relative(N, Child, Sex_p, Relative) :-
+		Temp_N = N - 1,
+		parent(Parent, Child),
+		sex(Parent, Sex_p),
+		find_relative(Temp_N, Parent, Sex_p, Relative).
 	
 	/*family("Vasya", "Ann", "Slava").
 	family("Vasya", "Ann", "Vadim").
@@ -77,4 +86,6 @@ GOAL
 	
 	%all grandparents from mom
 	%find_grandparent("Katya", Grandparent, _, female).
+	
+	find_relative(2, "Katya", female, Relative).
 	

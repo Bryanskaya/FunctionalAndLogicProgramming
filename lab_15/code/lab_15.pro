@@ -79,6 +79,8 @@ CLAUSES
 		get_price_by_owner(Surname, water_transport, Price3),
 		get_price_by_owner(Surname, car, Price4),
 		Sum = Price1 + Price2 + Price3 + Price4.
+		
+	
 	
 GOAL
 	%property_price_by_owner("Mishina", Property, _).
